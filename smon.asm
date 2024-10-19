@@ -42,10 +42,10 @@ IRQ_LO          = $0314         ; Vector: Hardware IRQ Interrupt Address Lo
 IRQ_HI          = $0315         ; Vector: Hardware IRQ Interrupt Address Hi
 BRK_LO          = $0316         ; Vector: BRK Lo
 BRK_HI          = $0317         ; Vector: BRK Hi
-CHRIN           = $FFCF         ; Kernal input routine
-CHROUT          = $FFD2         ; Kernal output routine
-STOP            = $FFE1         ; Kernal test STOP routine
-GETIN           = $FFE4         ; Kernal get input routine
+CHRIN           = $FECF         ; Kernal input routine
+CHROUT          = $FED2         ; Kernal output routine
+STOP            = $FEE1         ; Kernal test STOP routine
+GETIN           = $FEE4         ; Kernal get input routine
 
         .org    $8000
         .org    $e000

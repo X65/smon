@@ -539,7 +539,11 @@ RESET:  SEI                     ; prevent IRQ interrupts
      .if UART_TYPE==6850
        .include "uart_6850.asm"
      .else
-       .err "invalid UART_TYPE"
+       .if UART_TYPE==816
+         .include "uart_ria816.asm"
+       .else
+         .err "invalid UART_TYPE"
+       .endif
      .endif
    .endif
  .endif
@@ -548,7 +552,7 @@ RESET:  SEI                     ; prevent IRQ interrupts
 ;;; -------------------------  C64 kernal jump table  --------------------------
 ;;; ----------------------------------------------------------------------------
 
-        .org    $FF81
+        .org    $FE81
         JMP     KSTUB           ; FF81:
         JMP     KSTUB           ; FF84:
         JMP     KSTUB           ; FF87:
